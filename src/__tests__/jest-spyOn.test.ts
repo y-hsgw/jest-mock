@@ -36,9 +36,9 @@ describe("jest.spuOn()", () => {
 
   /** 引数の値を2倍にして返す関数のテスト */
   it("double", () => {
-    /** dou */
+    /** doubleメソッドの返り値を4に設定 */
     const spy = jest.spyOn(calc, "double").mockImplementation(() => 4);
-    /** 本来  */
+    /** 本来1を引数に取ると2が返ってくるが、上記でモックした4が返ってくる  */
     expect(calc.double(1)).toEqual(4);
     spy.mockRestore();
   });
